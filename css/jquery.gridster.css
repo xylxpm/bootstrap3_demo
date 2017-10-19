@@ -119,7 +119,7 @@
   opacity:0;
 }
 */
-
+.indexmain { background-color: #afd9ee;width: 765px;}
 @media  screen and (min-width: 765px) {
     .indexmain {
         margin: 0 auto;
