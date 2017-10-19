@@ -1,6 +1,6 @@
 // jQuery List DragSort v0.5.2
 // License: http://dragsort.codeplex.com/license    http://www.jq22.com/jquery-info4584
-(function (e) {
+(function (e) {  
     e.fn.dragsort = function (t) {
         if (t == "destroy") {
             e(this.selector).trigger("dragsort-uninit");
