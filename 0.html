@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery.gridster.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="js/respond/1.4.2/respond.min.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <script src="js/gridster/jquery.gridster.js"></script>
+    <style>
+
+
+        .gridster * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gridster .div {
+            background-color: #afd9ee;
+        }
+
+        .gridster .li {
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100%;
+        }
+
+        .gridster .gs-w {
+            background: #DDD;
+            cursor: pointer;
+        }
+
+        .gridster .player {
+            background: #BBB;
+        }
+
+        .gridster .preview-holder {
+            border: none !important;
+            background: red !important;
+        }
+
+        .gridster .div .li header {
+            background: #999;
+            display: block;
+            font-size: 20px;
+            line-height: normal;
+            padding: 4px 0 6px;
+            margin-bottom: 20px;
+            cursor: move;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var gridster;
+
+        var serialization =  [{"col":2,"row":3,"size_x":1,"size_y":1,"name":"个人信息"},{"col":1,"row":3,"size_x":1,"size_y":1,"name":"我的班级"},{"col":3,"row":2,"size_x":1,"size_y":1,"name":"个人动态"},{"col":1,"row":1,"size_x":3,"size_y":1,"name":"任务统计"},{"col":1,"row":4,"size_x":1,"size_y":1,"name":"我的课程"},{"col":1,"row":2,"size_x":2,"size_y":1,"name":"任务列表"},{"col":2,"row":4,"size_x":2,"size_y":1,"name":"远程教研"},{"col":3,"row":3,"size_x":1,"size_y":1,"name":"任务动态"}]
+
+        $(function () {
+
+            var w = $(window).width();
+            if (w > 1200) {
+                var option = [[370, 280], [15, 20]];
+            } else if (w > 1000) {
+                var option = [[310, 230], [10, 15]];
+            } else if (w > 768) {
+                var option = [[245, 200], [5, 10]];
+            } else {
+                var option = [[245, 200], [5, 10]];
+            }
+
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 1200) {
+                    gridster.generate_stylesheet({
+                        widget_base_dimensions: [370, 280],
+                        widget_margins: [15, 20]
+                    });
+                    gridster.set_dom_grid_width_new(undefined, 400);
+                    gridster.set_dom_grid_height_new(undefined, 320);
+                } else if (w > 1000) {
+                    gridster.generate_stylesheet({
+                        widget_base_dimensions: [310, 230],
+                        widget_margins: [10, 15]
+                    });
+                    gridster.set_dom_grid_width_new(undefined, 330);
+                    gridster.set_dom_grid_height_new(undefined, 260);
+
+                } else if (w > 768) {
+
+                    gridster.generate_stylesheet({
+                        widget_base_dimensions: [245, 200],
+                        widget_margins: [5, 10]
+                    });
+                    gridster.set_dom_grid_width_new(undefined, 255);
+                    gridster.set_dom_grid_height_new(undefined, 220);
+                }
+            })
+
+
+            gridster = $(".gridster .div").gridster({
+                widget_selector: '.li',
+                widget_base_dimensions: option[0],
+                widget_margins: option[1],
+                draggable: {handle: 'header'},
+                autogrow_cols: false,
+                serialize_params: function ($w, wgd) {
+                    return {
+                        col: wgd.col,
+                        row: wgd.row,
+                        size_x: wgd.size_x,
+                        size_y: wgd.size_y,
+                        name: $w.attr("data-name")
+                    }
+                },
+                draggable: {
+                    stop: function(e, ui, $widget) {
+                        var s = gridster.serialize();
+                        $('#log').html(JSON.stringify(s));
+                    }
+                }
+            }).data('gridster');
+
+            serialization = Gridster.sort_by_row_and_col_asc(serialization);
+
+            $('.js-seralize').on('click', function() {
+                gridster.remove_all_widgets();
+                $.each(serialization, function() {
+                    var str = '<div class="li"><header>|||</header>'+this.name+'</div>'
+                    gridster.add_widget_new(str, this.size_x, this.size_y, this.col, this.row ,null,null,this.name);
+                });
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<button class="js-seralize">Serialize</button>
+<div id="log"></div>
+
+<div class="indexmain gridster">
+    <div class="div">
+
+    </div>
+</div>
+</body>
+</html>

@@ -1220,6 +1220,54 @@
         return $w.fadeIn();
     };
 
+    fn.add_widget_new = function(html, size_x, size_y, col, row, max_size, min_size,name) {
+        var pos;
+        size_x || (size_x = 1);
+        size_y || (size_y = 1);
+
+        if (!col & !row) {
+            pos = this.next_position(size_x, size_y);
+        } else {
+            pos = {
+                col: col,
+                row: row,
+                size_x: size_x,
+                size_y: size_y
+            };
+
+            this.empty_cells(col, row, size_x, size_y);
+        }
+
+        var $w = $(html).attr({
+            'data-col': pos.col,
+            'data-row': pos.row,
+            'data-sizex' : size_x,
+            'data-sizey' : size_y,
+            'data-name' : name
+        }).addClass('gs-w').appendTo(this.$el).hide();
+
+        this.$widgets = this.$widgets.add($w);
+
+        this.register_widget($w);
+
+        this.add_faux_rows(pos.size_y);
+        //this.add_faux_cols(pos.size_x);
+
+        if (max_size) {
+            this.set_widget_max_size($w, max_size);
+        }
+
+        if (min_size) {
+            this.set_widget_min_size($w, min_size);
+        }
+
+        this.set_dom_grid_width();
+        this.set_dom_grid_height();
+
+        this.drag_api.set_limits(this.cols * this.min_widget_width);
+
+        return $w.fadeIn();
+    };
 
     /**
     * Change widget size limits.
