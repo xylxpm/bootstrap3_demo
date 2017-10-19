@@ -25,7 +25,7 @@
         }
 
         .gridster .div {
-            background-color: #afd9ee;
+            /*background-color: #afd9ee;*/
         }
 
         .gridster .li {
@@ -63,7 +63,31 @@
     <script type="text/javascript">
         var gridster;
 
-        var serialization =  [{"col":2,"row":3,"size_x":1,"size_y":1,"name":"个人信息"},{"col":1,"row":3,"size_x":1,"size_y":1,"name":"我的班级"},{"col":3,"row":2,"size_x":1,"size_y":1,"name":"个人动态"},{"col":1,"row":1,"size_x":3,"size_y":1,"name":"任务统计"},{"col":1,"row":4,"size_x":1,"size_y":1,"name":"我的课程"},{"col":1,"row":2,"size_x":2,"size_y":1,"name":"任务列表"},{"col":2,"row":4,"size_x":2,"size_y":1,"name":"远程教研"},{"col":3,"row":3,"size_x":1,"size_y":1,"name":"任务动态"}]
+        var serialization = [{"col": 2, "row": 3, "size_x": 1, "size_y": 1, "name": "个人信息"}, {
+            "col": 1,
+            "row": 3,
+            "size_x": 1,
+            "size_y": 1,
+            "name": "我的班级"
+        }, {"col": 3, "row": 2, "size_x": 1, "size_y": 1, "name": "个人动态"}, {
+            "col": 1,
+            "row": 1,
+            "size_x": 3,
+            "size_y": 1,
+            "name": "任务统计"
+        }, {"col": 1, "row": 4, "size_x": 1, "size_y": 1, "name": "我的课程"}, {
+            "col": 1,
+            "row": 2,
+            "size_x": 2,
+            "size_y": 1,
+            "name": "任务列表"
+        }, {"col": 2, "row": 4, "size_x": 2, "size_y": 1, "name": "远程教研"}, {
+            "col": 3,
+            "row": 3,
+            "size_x": 1,
+            "size_y": 1,
+            "name": "任务动态"
+        }]
 
         $(function () {
 
@@ -123,7 +147,7 @@
                     }
                 },
                 draggable: {
-                    stop: function(e, ui, $widget) {
+                    stop: function (e, ui, $widget) {
                         var s = gridster.serialize();
                         $('#log').html(JSON.stringify(s));
                     }
@@ -132,10 +156,10 @@
 
             serialization = Gridster.sort_by_row_and_col_asc(serialization);
 
-            $('.js-seralize').on('click', function() {
+            $('.js-seralize').on('click', function () {
                 gridster.remove_all_widgets();
-                $.each(serialization, function() {
-                    var str = '<div class="li"><header>|||</header>'+this.name+'</div>'
+                $.each(serialization, function () {
+                    var str = '<div class="li"><header>|||</header>' + this.name + '</div>'
                     gridster.add_widget(str, this.size_x, this.size_y, this.col, this.row);
                 });
             });
