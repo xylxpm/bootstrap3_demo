@@ -3605,6 +3605,16 @@
         this.$el.css('height', this.container_height);
         return this;
     };
+    fn.set_dom_grid_height_new = function(height,h) {
+        if (typeof height === 'undefined') {
+            var r = this.get_highest_occupied_cell().row;
+            height = r * h;
+        }
+
+        this.container_height = height;
+        this.$el.css('height', this.container_height);
+        return this;
+    };
 
     /**
     * Set the current width of the parent grid.
@@ -3626,7 +3636,7 @@
         return this;
     };
 
-    fn.set_dom_grid_width_my = function(cols,w) {
+    fn.set_dom_grid_width_new = function(cols,w) {
         if (typeof cols === 'undefined') {
             cols = this.get_highest_occupied_cell().col;
         }

@@ -26,7 +26,9 @@
 
 
 
-
+        .gridster .div{
+            background-color: #afd9ee;
+        }
 
 
         .gridster .li {
@@ -84,13 +86,15 @@
                         widget_base_dimensions:[370, 280],
                         widget_margins:  [15, 20]
                     });
-                    gridster.set_dom_grid_width_my(undefined,400);
+                    gridster.set_dom_grid_width_new(undefined,400);
+                    gridster.set_dom_grid_height_new(undefined,320);
                 } else if (w > 1000) {
                     gridster.generate_stylesheet({
                         widget_base_dimensions: [310, 230],
                         widget_margins: [10, 15]
                     });
-                    gridster.set_dom_grid_width_my(undefined,330);
+                    gridster.set_dom_grid_width_new(undefined,330);
+                    gridster.set_dom_grid_height_new(undefined,260);
 
                 } else if (w > 768) {
 
@@ -98,7 +102,8 @@
                         widget_base_dimensions:[245, 200],
                         widget_margins:[5, 10]
                     });
-                    gridster.set_dom_grid_width_my(undefined,255);
+                    gridster.set_dom_grid_width_new(undefined,255);
+                    gridster.set_dom_grid_height_new(undefined,220);
                 }
             })
 

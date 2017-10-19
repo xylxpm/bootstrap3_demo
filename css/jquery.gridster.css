@@ -119,11 +119,10 @@
   opacity:0;
 }
 */
-.indexmain { background-color: #afd9ee;width: 765px;}
+.indexmain { width: 765px;}
 @media  screen and (min-width: 765px) {
     .indexmain {
         margin: 0 auto;
-        background-color: #afd9ee;
         width: 765px;
         padding-right: 0px;
         padding-left: 0px;
@@ -155,7 +154,6 @@
 @media screen and (min-width: 1000px) {
     .indexmain {
         margin: 0 auto;
-        background-color: #afd9ee;
         width: 990px;
         padding-right: 0px;
         padding-left: 0px;
@@ -186,7 +184,6 @@
 @media  screen and (min-width: 1200px) {
     .indexmain {
         margin: 0 auto;
-        background-color: #afd9ee;
         width: 1200px;
         padding-right: 0px;
         padding-left: 0px;
