@@ -24,12 +24,9 @@
             padding: 0;
         }
 
-
-
-        .gridster .div{
+        .gridster .div {
             background-color: #afd9ee;
         }
-
 
         .gridster .li {
             font-size: 1em;
@@ -75,7 +72,7 @@
                 var option = [[310, 230], [10, 15]];
             } else if (w > 768) {
                 var option = [[245, 200], [5, 10]];
-            } else{
+            } else {
                 var option = [[245, 200], [5, 10]];
             }
 
@@ -83,30 +80,29 @@
                 var w = $(window).width();
                 if (w > 1200) {
                     gridster.generate_stylesheet({
-                        widget_base_dimensions:[370, 280],
-                        widget_margins:  [15, 20]
+                        widget_base_dimensions: [370, 280],
+                        widget_margins: [15, 20]
                     });
-                    gridster.set_dom_grid_width_new(undefined,400);
-                    gridster.set_dom_grid_height_new(undefined,320);
+                    gridster.set_dom_grid_width_new(undefined, 400);
+                    gridster.set_dom_grid_height_new(undefined, 320);
                 } else if (w > 1000) {
                     gridster.generate_stylesheet({
                         widget_base_dimensions: [310, 230],
                         widget_margins: [10, 15]
                     });
-                    gridster.set_dom_grid_width_new(undefined,330);
-                    gridster.set_dom_grid_height_new(undefined,260);
+                    gridster.set_dom_grid_width_new(undefined, 330);
+                    gridster.set_dom_grid_height_new(undefined, 260);
 
                 } else if (w > 768) {
 
                     gridster.generate_stylesheet({
-                        widget_base_dimensions:[245, 200],
-                        widget_margins:[5, 10]
+                        widget_base_dimensions: [245, 200],
+                        widget_margins: [5, 10]
                     });
-                    gridster.set_dom_grid_width_new(undefined,255);
-                    gridster.set_dom_grid_height_new(undefined,220);
+                    gridster.set_dom_grid_width_new(undefined, 255);
+                    gridster.set_dom_grid_height_new(undefined, 220);
                 }
             })
-
 
 
             gridster = $(".gridster .div").gridster({
@@ -114,7 +110,7 @@
                 widget_base_dimensions: option[0],
                 widget_margins: option[1],
                 draggable: {handle: 'header'},
-                autogrow_cols:false,
+                autogrow_cols: false,
                 serialize_params: function ($w, wgd) {
                     return {
                         col: wgd.col,
@@ -122,6 +118,12 @@
                         size_x: wgd.size_x,
                         size_y: wgd.size_y,
                         name: $w.attr("data-name")
+                    }
+                },
+                draggable: {
+                    stop: function(e, ui, $widget) {
+                        var s = gridster.serialize();
+                        $('#log').html(JSON.stringify(s));
                     }
                 }
             }).data('gridster');
@@ -140,38 +142,38 @@
 
 <div class="indexmain gridster">
     <div class="div">
-        <div class="li" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-name="aaa">
+        <div class="li" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-name="个人信息">
             <header>|||</header>
-            aa
+            个人信息
         </div>
-        <div class="li" data-row="1" data-col="2" data-sizex="1" data-sizey="1" data-name="bb">
+        <div class="li" data-row="1" data-col="2" data-sizex="1" data-sizey="1" data-name="我的班级">
             <header>|||</header>
-            bb
+            我的班级
         </div>
-        <div class="li" data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+        <div class="li" data-row="1" data-col="3" data-sizex="1" data-sizey="1" data-name="个人动态">
             <header>|||</header>
-            2
+            个人动态
         </div>
-        <div class="li" data-row="2" data-col="1" data-sizex="3" data-sizey="1">
+        <div class="li" data-row="2" data-col="1" data-sizex="3" data-sizey="1" data-name="任务统计">
             <header>|||</header>
-            3
+            任务统计
         </div>
 
-        <div class="li" data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+        <div class="li" data-row="3" data-col="1" data-sizex="1" data-sizey="1" data-name="我的课程">
             <header>|||</header>
-            4
+            我的课程
         </div>
-        <div class="li" data-row="3" data-col="2" data-sizex="2" data-sizey="1">
+        <div class="li" data-row="3" data-col="2" data-sizex="2" data-sizey="1" data-name="任务列表">
             <header>|||</header>
-            5
+            任务列表
         </div>
-        <div class="li" data-row="4" data-col="1" data-sizex="2" data-sizey="1">
+        <div class="li" data-row="4" data-col="1" data-sizex="2" data-sizey="1" data-name="远程教研">
             <header>|||</header>
-            6
+            远程教研
         </div>
-        <div class="li" data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+        <div class="li" data-row="4" data-col="2" data-sizex="1" data-sizey="1" data-name="任务动态">
             <header>|||</header>
-            6
+            任务动态
         </div>
     </div>
 </div>
