@@ -3626,6 +3626,20 @@
         return this;
     };
 
+    fn.set_dom_grid_width_my = function(cols,w) {
+        if (typeof cols === 'undefined') {
+            cols = this.get_highest_occupied_cell().col;
+        }
+
+        var max_cols = (this.options.autogrow_cols ? this.options.max_cols :
+            this.cols);
+
+        cols = Math.min(max_cols, Math.max(cols, this.options.min_cols));
+        this.container_width = cols * w;
+        this.$el.css('width', this.container_width);
+        return this;
+    };
+
 
     /**
     * It generates the neccessary styles to position the widgets.
