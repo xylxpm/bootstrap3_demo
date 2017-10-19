@@ -136,7 +136,7 @@
                 gridster.remove_all_widgets();
                 $.each(serialization, function() {
                     var str = '<div class="li"><header>|||</header>'+this.name+'</div>'
-                    gridster.add_widget_new(str, this.size_x, this.size_y, this.col, this.row ,null,null,this.name);
+                    gridster.add_widget(str, this.size_x, this.size_y, this.col, this.row);
                 });
             });
 
