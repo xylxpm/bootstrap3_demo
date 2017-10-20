@@ -63,8 +63,10 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 30px;height: 30px;
-            line-height: 30px;text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
             cursor: pointer;
         }
     </style>
@@ -112,7 +114,7 @@
                 }
             })
 
-            var serialization =null,s="";
+            var serialization = null, s = "", bool = false;
 
             gridster = $(".gridster .div").gridster({
                 widget_selector: '.li',
@@ -130,25 +132,30 @@
                     }
                 },
                 draggable: {
-                    start:function(e, ui, $widget){
-                         s = gridster.serialize();
+                    start: function (e, ui, $widget) {
+                        s = gridster.serialize();
                         console.log(s);
                     },
                     stop: function (e, ui, $widget) {
 
-                        $('#log').html(serialization);
-                        serialization = Gridster.sort_by_row_and_col_asc(s);
-                        gridster.remove_all_widgets();
-                        $.each(serialization, function () {
-                            var str = '<div class="li"><header>||| <div class="closemy">X</div></header>' + this.name + '</div>'
-                            gridster.add_widget(str, this.size_x, this.size_y, this.col, this.row);
-                        });
+                        if (bool) {
+                            alert('移动失败')
+                            serialization = Gridster.sort_by_row_and_col_asc(s);
+                            gridster.remove_all_widgets();
+                            $.each(serialization, function () {
+                                var str = '<div class="li"><header>||| <div class="closemy">X</div></header>' + this.name + '</div>'
+                                gridster.add_widget_new(str, this.size_x, this.size_y, this.col, this.row, null, null, this.name);
+                            });
+                        }else{
+                            var s = gridster.serialize();
+                            $('#log').html(JSON.stringify(s));
+                        }
                     }
                 }
             }).data('gridster');
 
             $(".closemy").on('click', function () {
-                gridster.remove_widget( $(this).parents(".li"));
+                gridster.remove_widget($(this).parents(".li"));
             })
             $('.js-seralize').on('click', function () {
                 var s = gridster.serialize();
@@ -164,36 +171,52 @@
 <div class="indexmain gridster">
     <div class="div">
         <div class="li" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-name="个人信息">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             个人信息
         </div>
         <div class="li" data-row="1" data-col="2" data-sizex="1" data-sizey="1" data-name="我的班级">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             我的班级
         </div>
         <div class="li" data-row="1" data-col="3" data-sizex="1" data-sizey="1" data-name="个人动态">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             个人动态
         </div>
         <div class="li" data-row="2" data-col="1" data-sizex="3" data-sizey="1" data-name="任务统计">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             任务统计
         </div>
 
         <div class="li" data-row="3" data-col="1" data-sizex="1" data-sizey="1" data-name="我的课程">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             我的课程
         </div>
         <div class="li" data-row="3" data-col="2" data-sizex="2" data-sizey="1" data-name="任务列表">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             任务列表
         </div>
         <div class="li" data-row="4" data-col="1" data-sizex="2" data-sizey="1" data-name="远程教研">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             远程教研
         </div>
         <div class="li" data-row="4" data-col="2" data-sizex="1" data-sizey="1" data-name="任务动态">
-            <header>||| <div class="closemy">X</div></header>
+            <header>|||
+                <div class="closemy">X</div>
+            </header>
             任务动态
         </div>
     </div>
