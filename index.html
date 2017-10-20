@@ -122,6 +122,9 @@
                 widget_margins: option[1],
                 draggable: {handle: 'header'},
                 autogrow_cols: false,
+                resize: {
+                    enabled: true
+                },
                 serialize_params: function ($w, wgd) {
                     return {
                         col: wgd.col,
