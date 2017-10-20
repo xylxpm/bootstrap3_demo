@@ -2,13 +2,14 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/js/dargFlex.min.js" />
+        <item url="file://$PROJECT_DIR$/js/css3-mediaqueries.min.min.js" />
         <item url="file://$PROJECT_DIR$/js/gridster/jquery.gridster.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/js/dargFlex.min.js" />
       <root url="file://$PROJECT_DIR$/js/dargFlex.min.js" />
+      <root url="file://$PROJECT_DIR$/js/css3-mediaqueries.min.min.js" />
       <root url="file://$PROJECT_DIR$/js/gridster/jquery.gridster.min.js" />
     </CLASSES>
     <SOURCES />
