@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>demo</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/jquery.gridster.min.css" rel="stylesheet">
-    <link href="css/a.css" rel="stylesheet">
+    <link href="css/jquery.gridster.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="js/respond/1.4.2/respond.min.js"></script>
@@ -60,6 +59,14 @@
             cursor: move;
         }
 
+        .closemy {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;height: 30px;
+            line-height: 30px;text-align: center;
+            cursor: pointer;
+        }
     </style>
     <script type="text/javascript">
         var gridster;
@@ -105,6 +112,7 @@
                 }
             })
 
+            var serialization =null,s="";
 
             gridster = $(".gridster .div").gridster({
                 widget_selector: '.li',
@@ -122,14 +130,26 @@
                     }
                 },
                 draggable: {
-                    stop: function(e, ui, $widget) {
-                        var s = gridster.serialize();
-                        $('#log').html(JSON.stringify(s));
+                    start:function(e, ui, $widget){
+                         s = gridster.serialize();
+                        console.log(s);
+                    },
+                    stop: function (e, ui, $widget) {
+
+                        $('#log').html(serialization);
+                        serialization = Gridster.sort_by_row_and_col_asc(s);
+                        gridster.remove_all_widgets();
+                        $.each(serialization, function () {
+                            var str = '<div class="li"><header>||| <div class="closemy">X</div></header>' + this.name + '</div>'
+                            gridster.add_widget(str, this.size_x, this.size_y, this.col, this.row);
+                        });
                     }
                 }
             }).data('gridster');
 
-
+            $(".closemy").on('click', function () {
+                gridster.remove_widget( $(this).parents(".li"));
+            })
             $('.js-seralize').on('click', function () {
                 var s = gridster.serialize();
                 $('#log').html(JSON.stringify(s));
@@ -144,36 +164,36 @@
 <div class="indexmain gridster">
     <div class="div">
         <div class="li" data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-name="个人信息">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             个人信息
         </div>
         <div class="li" data-row="1" data-col="2" data-sizex="1" data-sizey="1" data-name="我的班级">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             我的班级
         </div>
         <div class="li" data-row="1" data-col="3" data-sizex="1" data-sizey="1" data-name="个人动态">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             个人动态
         </div>
         <div class="li" data-row="2" data-col="1" data-sizex="3" data-sizey="1" data-name="任务统计">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             任务统计
         </div>
 
         <div class="li" data-row="3" data-col="1" data-sizex="1" data-sizey="1" data-name="我的课程">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             我的课程
         </div>
         <div class="li" data-row="3" data-col="2" data-sizex="2" data-sizey="1" data-name="任务列表">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             任务列表
         </div>
         <div class="li" data-row="4" data-col="1" data-sizex="2" data-sizey="1" data-name="远程教研">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             远程教研
         </div>
         <div class="li" data-row="4" data-col="2" data-sizex="1" data-sizey="1" data-name="任务动态">
-            <header>|||</header>
+            <header>||| <div class="closemy">X</div></header>
             任务动态
         </div>
     </div>
