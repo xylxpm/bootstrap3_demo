@@ -1,11 +1,14 @@
-@mixin font-dpr($font-size) {
-  font-size: $font-size;
-
-  [data-dpr="2"] & {
-    font-size: $font-size * 6;
+$company-name: nicole;
+$fontSize: ('12', 1.2), ('14', 1.4), ('16', 1.6), ('18', 1.8), ('20', 2.0), ('22', 2.2), ('24', 2.4);
+@each $font-size in $fontSize {
+  .#{$company-name}-fontSize-#{nth($font-size,1)} {
+    font-size: #{nth($font-size,2)}rem;
   }
+}
 
-  [data-dpr="3"] & {
-    font-size: $font-size * 3;
+$color: 'f00', '000', 'fff';
+@each $text-color in $color {
+  .#{$company-name}-color-#{$text-color} {
+    color: #{'#'}#{$text-color};
   }
 }
