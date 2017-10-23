@@ -78,9 +78,12 @@
             var w = $(window).width();
             if (w > 1200) {
                 var option = [[370, 280], [15, 20]];
+
             } else if (w > 1000) {
                 var option = [[310, 230], [10, 15]];
+
             } else if (w > 768) {
+
                 var option = [[245, 200], [5, 10]];
             } else {
                 var option = [[245, 200], [5, 10]];
@@ -120,11 +123,10 @@
                 widget_selector: '.li',
                 widget_base_dimensions: option[0],
                 widget_margins: option[1],
-                draggable: {handle: 'header'},
                 autogrow_cols: false,
-                resize: {
-                    enabled: true
-                },
+//                resize: {
+//                    enabled: true
+//                },
                 serialize_params: function ($w, wgd) {
                     return {
                         col: wgd.col,
@@ -135,12 +137,12 @@
                     }
                 },
                 draggable: {
+                    handle: 'header',
                     start: function (e, ui, $widget) {
                         s = gridster.serialize();
                         console.log(s);
                     },
                     stop: function (e, ui, $widget) {
-
                         if (bool) {
                             alert('移动失败')
                             serialization = Gridster.sort_by_row_and_col_asc(s);
