@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/demo/jquery.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demo/layui" charset="GBK" />
     <file url="file://$PROJECT_DIR$/js/dargFlex.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/html5shiv/3.7.3/html5shiv.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/respond/1.4.2/respond.min.js" charset="UTF-8" />

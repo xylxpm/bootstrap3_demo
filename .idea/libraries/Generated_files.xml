@@ -2,8 +2,25 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/js/all.min.js" />
-        <item url="file://$PROJECT_DIR$/js/gridster/jquery.gridster.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/layer.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/table.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/code.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/form.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/flow.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/util.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/tree.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/layui.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/jquery.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laypage.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/layui.all.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/layedit.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/carousel.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/mobile.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laytpl.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/element.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/upload.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laydate.min.js" />
+        <item url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/jquery.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -15,6 +32,25 @@
       <root url="file://$PROJECT_DIR$/build/js/build.min.min.js" />
       <root url="file://$PROJECT_DIR$/js/all.min.js" />
       <root url="file://$PROJECT_DIR$/js/gridster/jquery.gridster.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/layer.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/table.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/code.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/form.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/flow.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/util.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/tree.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/layui.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laypage.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/layui.all.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/layedit.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/carousel.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/mobile.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laytpl.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/element.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/upload.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/laydate.min.js" />
+      <root url="file://$PROJECT_DIR$/demo/layui/2.1.5/lay/modules/jquery.min.js" />
     </CLASSES>
     <SOURCES />
   </library>

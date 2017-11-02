@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="layui/2.1.5/css/layui.css" media="all">
+    <script src="jquery.min.js"></script>
+
+
+</head>
+<body>
+<form class="layui-form layui-form-pane" action="">
+    <div class="layui-form-item" lay-filter="test1">
+        <label class="layui-form-label">下拉选择框</label>
+
+        <div class="layui-input-block">
+            <select name="interest" lay-filter="aihao">
+                <option value="0">写作</option>
+                <option value="1">阅读</option>
+            </select>
+        </div>
+    </div>
+</form>
+<script src="layui/2.1.5/layui.js"></script>
+<script>
+    layui.use(['form'], function () {
+
+        var form = layui.form
+
+        form.on('select(aihao)', function (data) {
+            alert(data.value)
+        });
+
+
+    });
+</script>
+</body>
+</html>
